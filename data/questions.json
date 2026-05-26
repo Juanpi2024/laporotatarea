@@ -1,0 +1,291 @@
+{
+  "gameTitle": "La Porota: Misión en la Ciudad de los Muñecos",
+  "missions": [
+    {
+      "id": 1,
+      "title": "El Nombre Secreto",
+      "location": "La Habitación de Porota",
+      "description": "Descubre la identidad secreta de nuestra heroína y los detalles de su vida cotidiana para comenzar esta gran aventura.",
+      "icon": "🔍",
+      "questions": [
+        {
+          "question": "¿Cuál es el verdadero nombre de Porota?",
+          "options": [
+            "María José Fernández",
+            "Beatriz María Magdalena de los Ángeles Osorio y Castroviejo",
+            "Carolina del Carmen López",
+            "Ana Beatriz Rodríguez"
+          ],
+          "correctAnswer": 1,
+          "points": 50,
+          "hint": "Su nombre completo es muy largo y elegante, como los nombres antiguos de la alta sociedad.",
+          "successMessage": "¡Excelente! Descubriste que Porota tiene un nombre muy especial y elegante.",
+          "failMessage": "¡Casi! Recuerda que el nombre de Porota es sumamente largo y distinguido. ¡Inténtalo de nuevo!"
+        },
+        {
+          "question": "¿Quién le puso el cariñoso apodo de 'Porota' a Beatriz?",
+          "options": [
+            "Su muñeca de trapo Mimí",
+            "Su papá, porque era pequeña y redondita",
+            "Su mamá al momento de nacer",
+            "El Gobernador Pirulo"
+          ],
+          "correctAnswer": 1,
+          "points": 50,
+          "hint": "Fue alguien muy cercano de su familia que la vio nacer pequeña y redonda.",
+          "successMessage": "¡Perfecto! Su papá la llamaba así cariñosamente desde muy pequeña.",
+          "failMessage": "¡No fue ese personaje! Piensa en un familiar directo muy querido por ella. ¡Inténtalo otra vez!"
+        },
+        {
+          "question": "De acuerdo con el libro, ¿cómo es descrita Porota físicamente y en su carácter?",
+          "options": [
+            "Es una niña tímida, callada, con pelo negro corto y ojos oscuros",
+            "Es una niña muy alta, enojona, seria y que siempre habla con voz ronca",
+            "Es una niña rubia, con dos trenzas, pecas, voz melodiosa, muy activa y cariñosa",
+            "Es una muñeca de trapo muy silenciosa que no puede hablar con humanos"
+          ],
+          "correctAnswer": 2,
+          "points": 50,
+          "hint": "Es muy alegre, tiene trenzas doradas y pequitas traviesas en su rostro.",
+          "successMessage": "¡Fantástico! Describiste exactamente a nuestra intrépida heroína.",
+          "failMessage": "¡Esa descripción no coincide! Recuerda sus trenzas rubias y su espíritu alegre. ¡Prueba otra vez!"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Los Enemigos de Trapo",
+      "location": "Las Calles de la Ciudad",
+      "description": "Identifica de qué están hechos los temibles vampiros que atacan la ciudad y cuáles son los peligros reales de su ataque nocturno.",
+      "icon": "🧟",
+      "questions": [
+        {
+          "question": "¿De qué material están hechos los temibles enemigos que atacan la Ciudad de los Muñecos?",
+          "options": [
+            "De madera tallada y pintura brillante",
+            "De plástico rígido y engranajes de metal",
+            "De trapo suave y relleno de aserrín",
+            "De papel doblado y cartón corrugado"
+          ],
+          "correctAnswer": 2,
+          "points": 50,
+          "hint": "Piensa en el mismo material con el que se fabrican los muñecos clásicos de la ciudad.",
+          "successMessage": "¡Correcto! Los vampiros también son muñecos de trapo y aserrín, lo que los hace parte del mismo mundo.",
+          "failMessage": "¡No exactamente! Recuerda que son vampiros muy particulares en esta historia. ¡Vuelve a intentar!"
+        },
+        {
+          "question": "¿Cuál es el gran peligro que representan estos Vampiros de Trapo durante la noche?",
+          "options": [
+            "Robar los juguetes reales de los niños humanos",
+            "Succionar el aserrín del cuello de los habitantes de la ciudad",
+            "Apagar todas las luces públicas y faroles de la Ciudad de los Muñecos",
+            "Convertir a los muñecos de trapo en estatuas de piedra"
+          ],
+          "correctAnswer": 1,
+          "points": 50,
+          "hint": "Buscan quitarles el material con el que están rellenos los muñecos.",
+          "successMessage": "¡Impresionante! Sabías que succionan el aserrín, dejándolos débiles y sin vida.",
+          "failMessage": "¡No es correcto! Recuerda qué es lo que rellena a los muñecos de trapo. ¡Tú puedes!"
+        },
+        {
+          "question": "¿Qué le ocurre finalmente a un muñeco de trapo si los vampiros le extraen todo su aserrín?",
+          "options": [
+            "Se transforma en un fantasma que asusta en el jardín",
+            "Se escapa corriendo al mundo de los humanos a pedir ayuda",
+            "Se desinfla por completo, pierde la vida y queda plano en el suelo",
+            "Se vuelve rígido de madera y no puede moverse nunca más"
+          ],
+          "correctAnswer": 2,
+          "points": 50,
+          "hint": "Si le quitas todo el relleno a un saco de tela, ¿cómo queda?",
+          "successMessage": "¡Excelente deducción! Sin aserrín, los muñecos quedan desinflados y sin vida.",
+          "failMessage": "¡Ese no es el destino de los muñecos sin relleno! Piensa en cómo pasa cuando se vacían. ¡Intenta de nuevo!"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Lazos de Amistad",
+      "location": "La Casa de Mimí",
+      "description": "Explora el gran lazo que une a Porota y Mimí, y comprende el viaje que realizan al asombroso mundo secreto.",
+      "icon": "💕",
+      "questions": [
+        {
+          "question": "De acuerdo con el desarrollo del libro, ¿en qué se parecen Porota y su muñeca Mimí?",
+          "options": [
+            "Ambas son sumamente tímidas, calladas y prefieren quedarse solas",
+            "Ambas son amorosas, valientes, divertidas y están decididas a ayudar",
+            "Ambas son muñecas de trapo viejas que pueden hablar con todos",
+            "Ambas son niñas humanas que van al mismo colegio"
+          ],
+          "correctAnswer": 1,
+          "points": 50,
+          "hint": "Comparten cualidades hermosas que hacen a las grandes amigas y heroínas.",
+          "successMessage": "¡Perfecto! Comparten un corazón de oro, gran valentía y espíritu alegre.",
+          "failMessage": "¡Piénsalo mejor! Recuerda las actitudes valientes que demuestran en la historia. ¡Tú puedes!"
+        },
+        {
+          "question": "¿Cómo viajan Porota y Mimí de noche hacia la mágica Ciudad de los Muñecos?",
+          "options": [
+            "Caminan de puntillas cruzando el jardín húmedo",
+            "Vuelan alto sobre un avión de juguete de madera",
+            "En un pequeño y elegante carruaje tirado por dos hermosos caballos de trapo",
+            "Cruzan un portal misterioso que aparece bajo la cama blanca"
+          ],
+          "correctAnswer": 2,
+          "points": 50,
+          "hint": "Es un transporte tradicional, mágico y de tamaño adecuado para juguetes de trapo.",
+          "successMessage": "¡Increíble! Viajan en un bello carruaje de trapo que las transporta al mundo secreto.",
+          "failMessage": "¡Ese no es su medio de transporte nocturno! Recuerda cómo se mueven en ese mundo mágico. ¡Prueba otra vez!"
+        },
+        {
+          "question": "¿Quién es el Gobernador Pirulo en este mágico relato y qué parentesco tiene con Mimí?",
+          "options": [
+            "Es el Carpintero de la esquina y es su mejor amigo de la infancia",
+            "Es Don Pedro, el dueño de la fábrica y creador de Mimí",
+            "Es el Gobernador de la Ciudad de los Muñecos y es el tío de Mimí",
+            "Es un temible vampiro arrepentido que ahora protege a los ciudadanos"
+          ],
+          "correctAnswer": 2,
+          "points": 50,
+          "hint": "Es la máxima autoridad de la Ciudad de los Muñecos y un familiar muy cercano de Mimí.",
+          "successMessage": "¡Excelente respuesta! El Gobernador Pirulo es tío de Mimí y recibe a Porota con grandes honores.",
+          "failMessage": "¡Parentesco equivocado! Recuerda quién dirige la ciudad y su relación familiar con la muñeca. ¡Inténtalo de nuevo!"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "El Aliado Secreto",
+      "location": "El Taller del Carpintero",
+      "description": "Descubre al hábil artesano que ayuda a nuestra protagonista y comprende la importancia de mantener la aventura bajo absoluto secreto.",
+      "icon": "🔨",
+      "questions": [
+        {
+          "question": "¿Quién proporcionó a Porota los materiales indispensables para llevar a cabo su plan de captura?",
+          "options": [
+            "El Gobernador Pirulo en su carruaje",
+            "Un carpintero amigo de la familia",
+            "Don Pedro en su fábrica",
+            "La mamá de Porota de su costurero"
+          ],
+          "correctAnswer": 1,
+          "points": 50,
+          "hint": "Es un hábil artesano que trabaja con madera y herramientas en su propio taller.",
+          "successMessage": "¡Bien hecho! El carpintero amigo confió en Porota y le entregó lo que necesitaba.",
+          "failMessage": "¡No fue ese personaje! Piensa en alguien que trabaja reparando cosas con materiales fuertes. ¡Vuelve a intentar!"
+        },
+        {
+          "question": "¿Qué elemento muy pegajoso le solicitó Porota al Carpintero para usar en su plan contra los vampiros?",
+          "options": [
+            "Una gran cantidad de goma de mascar de menta",
+            "Un rollo gigante de cinta adhesiva mágica",
+            "Una gran cantidad de cola fría o pegamento muy resistente",
+            "Un balde lleno de engrudo casero hecho con harina y agua"
+          ],
+          "correctAnswer": 2,
+          "points": 50,
+          "hint": "Es un material líquido usado en carpintería que al secarse une las piezas con extrema firmeza.",
+          "successMessage": "¡Fabuloso! Pidió una gran cantidad de cola o pegamento fuerte para inmovilizarlos de forma astuta.",
+          "failMessage": "¡Ese pegamento no sería lo suficientemente fuerte! Piensa en lo que usa un carpintero para su trabajo. ¡Inténtalo!"
+        },
+        {
+          "question": "¿Por qué era sumamente importante que el Carpintero guardara el secreto del encargo de Porota?",
+          "options": [
+            "Porque la policía de los humanos andaba buscando ese pegamento",
+            "Porque si los adultos se enteraban, arruinarían el plan y creerían que Porota estaba loca",
+            "Porque los Vampiros de Trapo vigilaban de cerca el taller de carpintería",
+            "Porque era una sorpresa secreta de cumpleaños preparada para Mimí"
+          ],
+          "correctAnswer": 1,
+          "points": 50,
+          "hint": "Los adultos a veces no comprenden las aventuras mágicas de los niños y piensan que son solo fantasías.",
+          "successMessage": "¡Sensacional! Sabías que los adultos no entenderían la magia de los juguetes y detendrían a Porota.",
+          "failMessage": "¡No es por esa razón! Piensa en cómo reaccionan los adultos ante la magia infantil. ¡Prueba una vez más!"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "El Plan Maestro",
+      "location": "La Fábrica de Don Pedro",
+      "description": "Revela el ingenioso e incruento plan de Porota en la fábrica y sé condecorado por la máxima autoridad de la Ciudad de los Muñecos.",
+      "icon": "⭐",
+      "questions": [
+        {
+          "question": "¿Cuál fue el ingenioso plan ideado por Porota para detener a los Vampiros de Trapo sin violencia?",
+          "options": [
+            "Encerrarlos en una jaula de alambre gigante durante toda la noche",
+            "Esparcir el fuerte pegamento en la repisa donde se paraban para dejarlos atrapados por las colas",
+            "Asustarlos a todos usando una máscara terrorífica que ella misma diseñó",
+            "Llamar de inmediato a la policía de los muñecos de trapo para arrestarlos"
+          ],
+          "correctAnswer": 1,
+          "points": 50,
+          "hint": "El plan aprovechaba su costumbre de posarse en filas en un lugar alto usando el pegamento del carpintero.",
+          "successMessage": "🎉 ¡INCREÍBLE! Descubriste el plan maestro: ¡quedaron pegados por sus colas en la repisa!",
+          "failMessage": "¡Tan cerca! Recuerda qué material pegajoso consiguió con el carpintero y cómo lo aplicó. ¡Intenta otra vez!"
+        },
+        {
+          "question": "De acuerdo con el libro, ¿por qué motivo real los Vampiros de Trapo atacaban a los otros ciudadanos de trapo?",
+          "options": [
+            "Porque odiaban profundamente la alegre música de la plaza principal",
+            "Porque se sentían superiores al resto y querían gobernar toda la ciudad en solitario",
+            "Porque no tenían nada más que comer y tenían mucha hambre",
+            "Porque estaban bajo un hechizo mágico de un mago malvado del bosque"
+          ],
+          "correctAnswer": 1,
+          "points": 50,
+          "hint": "Los vampiros de trapo tenían un gran orgullo y no querían convivir en paz con los demás muñecos.",
+          "successMessage": "¡Muy bien analizado! Su ambición y orgullo los hacía querer someter a los otros habitantes de la ciudad.",
+          "failMessage": "¡Esa no es la motivación de los vampiros! Piensa en sus deseos de poder y control en la ciudad. ¡Inténtalo!"
+        },
+        {
+          "question": "Al salvar exitosamente a toda la Ciudad de los Muñecos, ¿qué importante título le otorga el Gobernador Pirulo a Porota?",
+          "options": [
+            "Presidenta Suprema e Vitalicia de todos los Muñecos",
+            "Muñeca de Trapo Honoraria de la Ciudad para siempre",
+            "Reina Protectora del Aserrín y del Algodón de Nunca Jamás",
+            "Inspectora General del Jardín de la Habitación Blanca"
+          ],
+          "correctAnswer": 1,
+          "points": 50,
+          "hint": "Es el título más noble y especial que un ser de carne y hueso puede recibir en el mundo de los muñecos.",
+          "successMessage": "👑 ¡SENSACIONAL! ¡Te has convertido en un héroe de trapo honorario junto a Porota! Has ganado el juego.",
+          "failMessage": "¡Ese hermoso título no es correcto! Piensa en cómo integraron a Porota a su comunidad para siempre. ¡Una última vez!"
+        }
+      ]
+    }
+  ],
+  "badges": [
+    {
+      "id": "amigo-leal",
+      "name": "Amigo Leal",
+      "description": "Completaste las Misiones 1 y 2 ayudando a Porota. ¡Eres un verdadero amigo!",
+      "icon": "🤝",
+      "unlockCondition": "missions_1_and_2",
+      "requiredMissions": [1, 2]
+    },
+    {
+      "id": "estratega",
+      "name": "Estratega",
+      "description": "Completaste la Misión 4 consiguiendo la cola especial. ¡Eres un gran planificador!",
+      "icon": "🧠",
+      "unlockCondition": "mission_4",
+      "requiredMissions": [4]
+    },
+    {
+      "id": "muneca-honoraria",
+      "name": "Muñeca de Trapo Honoraria",
+      "description": "¡Completaste todas las misiones! El Gobernador Pirulo te otorga este título legendario.",
+      "icon": "👑",
+      "unlockCondition": "all_missions",
+      "requiredMissions": [1, 2, 3, 4, 5]
+    }
+  ],
+  "settings": {
+    "maxLives": 3,
+    "pointsPerCorrect": 50,
+    "bonusLastMission": 100
+  }
+}

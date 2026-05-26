@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#fff" stroke="#4A2E80" stroke-width="15" rx="20" />
+  
+  <!-- Marcos decorativos -->
+  <rect x="25" y="25" width="750" height="550" fill="none" stroke="#FF6B9D" stroke-dasharray="10, 10" stroke-width="4" rx="15" />
+  
+  <!-- Estrellas y corazones decorativos para colorear -->
+  <path d="M 100,80 L 105,95 L 120,95 L 108,105 L 112,120 L 100,110 L 88,120 L 92,105 L 80,95 L 95,95 Z" fill="none" stroke="#000" stroke-width="3" />
+  <path d="M 700,80 L 705,95 L 720,95 L 708,105 L 712,120 L 700,110 L 688,120 L 692,105 L 680,95 L 695,95 Z" fill="none" stroke="#000" stroke-width="3" />
+  
+  <path d="M 150,500 C 130,470 100,470 100,500 C 100,530 150,560 150,560 C 150,560 200,530 200,500 C 200,470 170,470 150,500 Z" fill="none" stroke="#000" stroke-width="3" />
+  <path d="M 650,500 C 630,470 600,470 600,500 C 600,530 650,560 650,560 C 650,560 700,530 700,500 C 700,470 670,470 650,500 Z" fill="none" stroke="#000" stroke-width="3" />
+
+  <!-- Título principal -->
+  <text x="400" y="70" font-family="'Nunito', sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#4A2E80">COLOREA A POROTA Y MIMÍ</text>
+  <text x="400" y="100" font-family="'Nunito', sans-serif" font-size="16" font-style="italic" text-anchor="middle" fill="#666">"¡Una amistad mágica que salvó a la Ciudad de los Muñecos!"</text>
+  
+  <!-- DIBUJO DE POROTA (A la izquierda) -->
+  <g transform="translate(180, 150)">
+    <!-- Pelo trasero/trenzas -->
+    <path d="M 30,120 Q -20,200 10,260 Q 20,280 40,270 Q 30,220 50,150" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" />
+    <path d="M 170,120 Q 220,200 190,260 Q 180,280 160,270 Q 170,220 150,150" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" />
+    <!-- Moños de las trenzas -->
+    <circle cx="25" cy="265" r="10" fill="none" stroke="#000" stroke-width="3" />
+    <circle cx="175" cy="265" r="10" fill="none" stroke="#000" stroke-width="3" />
+    
+    <!-- Cabeza -->
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#000" stroke-width="4" />
+    
+    <!-- Ojos -->
+    <circle cx="75" cy="90" r="8" fill="none" stroke="#000" stroke-width="3" />
+    <circle cx="75" cy="90" r="3" fill="#000" />
+    <circle cx="125" cy="90" r="8" fill="none" stroke="#000" stroke-width="3" />
+    <circle cx="125" cy="90" r="3" fill="#000" />
+    
+    <!-- Sonrisa y pecas -->
+    <path d="M 85,120 Q 100,135 115,120" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" />
+    <!-- Pecas -->
+    <circle cx="65" cy="110" r="2" fill="#000" />
+    <circle cx="60" cy="113" r="2" fill="#000" />
+    <circle cx="70" cy="114" r="2" fill="#000" />
+    <circle cx="135" cy="110" r="2" fill="#000" />
+    <circle cx="140" cy="113" r="2" fill="#000" />
+    <circle cx="130" cy="114" r="2" fill="#000" />
+    
+    <!-- Nariz -->
+    <path d="M 97,100 Q 100,105 103,100" fill="none" stroke="#000" stroke-width="3" />
+    
+    <!-- Flequillo / Pelo delantero -->
+    <path d="M 32,85 C 40,50 80,40 100,60 C 120,40 160,50 168,85" fill="none" stroke="#000" stroke-width="4" />
+    
+    <!-- Vestido de Porota -->
+    <path d="M 60,165 L 30,300 L 170,300 L 140,165 Z" fill="none" stroke="#000" stroke-width="4" />
+    <!-- Detalles del vestido (cuello y botones) -->
+    <path d="M 75,165 Q 100,185 125,165" fill="none" stroke="#000" stroke-width="3" />
+    <circle cx="100" cy="200" r="5" fill="none" stroke="#000" stroke-width="3" />
+    <circle cx="100" cy="230" r="5" fill="none" stroke="#000" stroke-width="3" />
+    
+    <!-- Brazos -->
+    <path d="M 55,175 Q 10,210 20,240 Q 35,245 45,210" fill="none" stroke="#000" stroke-width="3" />
+    <path d="M 145,175 Q 190,210 180,240 Q 165,245 155,210" fill="none" stroke="#000" stroke-width="3" />
+    
+    <!-- Piernas y Zapatos -->
+    <rect x="75" y="300" width="12" height="50" fill="none" stroke="#000" stroke-width="3" />
+    <rect x="113" y="300" width="12" height="50" fill="none" stroke="#000" stroke-width="3" />
+    <path d="M 65,350 L 90,350 L 90,365 L 65,365 Z" fill="none" stroke="#000" stroke-width="3" />
+    <path d="M 110,350 L 135,350 L 135,365 L 110,365 Z" fill="none" stroke="#000" stroke-width="3" />
+  </g>
+  
+  <!-- DIBUJO DE MIMÍ (A la derecha, más pequeña) -->
+  <g transform="translate(470, 220)">
+    <!-- Cabeza Redonda con Costuras -->
+    <circle cx="80" cy="80" r="55" fill="none" stroke="#000" stroke-width="4" />
+    <!-- Costura del medio típica de muñeca de trapo -->
+    <path d="M 80,25 L 80,135" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="5,5" />
+    
+    <!-- Ojos de botón -->
+    <circle cx="60" cy="70" r="8" fill="none" stroke="#000" stroke-width="3" />
+    <line x1="56" y1="66" x2="64" y2="74" stroke="#000" stroke-width="2" />
+    <line x1="64" y1="66" x2="56" y2="74" stroke="#000" stroke-width="2" />
+    
+    <circle cx="100" cy="70" r="8" fill="none" stroke="#000" stroke-width="3" />
+    <line x1="96" y1="66" x2="104" y2="74" stroke="#000" stroke-width="2" />
+    <line x1="104" y1="66" x2="96" y2="74" stroke="#000" stroke-width="2" />
+    
+    <!-- Boca cosida -->
+    <path d="M 65,105 Q 80,115 95,105" fill="none" stroke="#000" stroke-width="3" />
+    <line x1="72" y1="104" x2="72" y2="112" stroke="#000" stroke-width="2" />
+    <line x1="80" y1="106" x2="80" y2="114" stroke="#000" stroke-width="2" />
+    <line x1="88" y1="104" x2="88" y2="112" stroke="#000" stroke-width="2" />
+    
+    <!-- Pelo de lana -->
+    <path d="M 30,60 Q 40,30 80,30 Q 120,30 130,60" fill="none" stroke="#000" stroke-width="3" />
+    <circle cx="35" cy="40" r="10" fill="none" stroke="#000" stroke-width="2" />
+    <circle cx="125" cy="40" r="10" fill="none" stroke="#000" stroke-width="2" />
+    
+    <!-- Cuerpo y Vestidito -->
+    <path d="M 50,132 L 25,230 L 135,230 L 110,132 Z" fill="none" stroke="#000" stroke-width="4" />
+    
+    <!-- Delantal de Mimí -->
+    <rect x="50" y="160" width="60" height="70" fill="none" stroke="#000" stroke-width="3" stroke-dasharray="3,3" />
+    
+    <!-- Brazos de trapo -->
+    <path d="M 45,140 Q 10,170 25,190 Q 35,190 45,160" fill="none" stroke="#000" stroke-width="3" />
+    <path d="M 115,140 Q 150,170 135,190 Q 125,190 115,160" fill="none" stroke="#000" stroke-width="3" />
+    
+    <!-- Piernas caídas de trapo -->
+    <path d="M 60,230 L 60,280 C 60,290 50,290 50,280 Z" fill="none" stroke="#000" stroke-width="3" />
+    <path d="M 100,230 L 100,280 C 100,290 90,290 90,280 Z" fill="none" stroke="#000" stroke-width="3" />
+  </g>
+  
+  <!-- Instrucciones inferiores -->
+  <text x="400" y="555" font-family="'Nunito', sans-serif" font-size="14" text-anchor="middle" fill="#777">¡Imprime esta página y usa tus lápices de colores favoritos!</text>
+</svg>

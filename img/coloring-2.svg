@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#fff" stroke="#4A2E80" stroke-width="15" rx="20" />
+  
+  <!-- Marcos decorativos -->
+  <rect x="25" y="25" width="750" height="550" fill="none" stroke="#FFD700" stroke-dasharray="10, 10" stroke-width="4" rx="15" />
+  
+  <!-- Estrellas y banderines decorativos para colorear -->
+  <path d="M 50,50 L 100,50 L 75,90 Z" fill="none" stroke="#000" stroke-width="2" />
+  <path d="M 100,50 L 150,50 L 125,90 Z" fill="none" stroke="#000" stroke-width="2" />
+  <path d="M 150,50 L 200,50 L 175,90 Z" fill="none" stroke="#000" stroke-width="2" />
+  
+  <path d="M 600,50 L 650,50 L 625,90 Z" fill="none" stroke="#000" stroke-width="2" />
+  <path d="M 650,50 L 700,50 L 675,90 Z" fill="none" stroke="#000" stroke-width="2" />
+  <path d="M 700,50 L 750,50 L 725,90 Z" fill="none" stroke="#000" stroke-width="2" />
+
+  <!-- Título principal -->
+  <text x="400" y="70" font-family="'Nunito', sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#4A2E80">¡EL TRIUNFO EN LA CIUDAD!</text>
+  <text x="400" y="100" font-family="'Nunito', sans-serif" font-size="16" font-style="italic" text-anchor="middle" fill="#666">"Los temibles vampiros atrapados por sus colas con pegamento"</text>
+  
+  <!-- LA REPISA CON LOS VAMPIROS PEGADOS (Al centro-arriba) -->
+  <g transform="translate(150, 130)">
+    <!-- La repisa de madera -->
+    <rect x="0" y="120" width="500" height="20" fill="none" stroke="#000" stroke-width="4" rx="5" />
+    <path d="M 10,140 L 30,170 M 490,140 L 470,170" stroke="#000" stroke-width="4" />
+    
+    <!-- Manchas de pegamento goteando de la repisa -->
+    <path d="M 50,140 C 50,155 70,155 70,140" fill="none" stroke="#000" stroke-width="3" />
+    <path d="M 230,140 C 230,160 250,160 250,140" fill="none" stroke="#000" stroke-width="3" />
+    <path d="M 400,140 C 400,155 420,155 420,140" fill="none" stroke="#000" stroke-width="3" />
+
+    <!-- VAMPIRO 1 (Izquierda, enojado e inmóvil) -->
+    <g transform="translate(80, 20)">
+      <!-- Cabeza y orejas puntiagudas -->
+      <path d="M 30,50 C 15,20 20,10 25,10 C 35,25 65,25 75,10 C 80,10 85,20 70,50 Z" fill="none" stroke="#000" stroke-width="3" />
+      <circle cx="50" cy="50" r="25" fill="none" stroke="#000" stroke-width="3" />
+      <!-- Ojos molestos -->
+      <path d="M 40,45 L 48,48 M 60,45 L 52,48" stroke="#000" stroke-width="2" />
+      <circle cx="43" cy="52" r="3" fill="#000" />
+      <circle cx="57" cy="52" r="3" fill="#000" />
+      <!-- Colmillos -->
+      <path d="M 45,63 L 47,69 L 50,63 L 53,69 L 55,63" stroke="#000" stroke-width="2" fill="none" />
+      
+      <!-- Cuerpo y Alitas de murciélago -->
+      <rect x="35" y="75" width="30" height="45" fill="none" stroke="#000" stroke-width="3" rx="5" />
+      <!-- Alas -->
+      <path d="M 35,80 C 10,70 -10,90 20,110 C 25,105 35,95 35,95" fill="none" stroke="#000" stroke-width="3" />
+      <path d="M 65,80 C 90,70 110,90 80,110 C 75,105 65,95 65,95" fill="none" stroke="#000" stroke-width="3" />
+      
+      <!-- Cola de trapo larga atrapada con pegamento en la repisa -->
+      <path d="M 50,120 Q 20,135 15,100 Q 30,95 50,120" fill="none" stroke="#000" stroke-width="3" />
+      <!-- Charco de pegamento alrededor de la cola -->
+      <ellipse cx="40" cy="118" rx="25" ry="5" fill="none" stroke="#000" stroke-width="2" />
+    </g>
+
+    <!-- VAMPIRO 2 (Derecha, asombrado) -->
+    <g transform="translate(320, 20)">
+      <path d="M 30,50 C 15,20 20,10 25,10 C 35,25 65,25 75,10 C 80,10 85,20 70,50 Z" fill="none" stroke="#000" stroke-width="3" />
+      <circle cx="50" cy="50" r="25" fill="none" stroke="#000" stroke-width="3" />
+      <!-- Ojos abiertos de sorpresa -->
+      <circle cx="42" cy="48" r="5" fill="none" stroke="#000" stroke-width="2" />
+      <circle cx="58" cy="48" r="5" fill="none" stroke="#000" stroke-width="2" />
+      <!-- Boca abierta de susto -->
+      <circle cx="50" cy="62" r="4" fill="none" stroke="#000" stroke-width="2" />
+      
+      <!-- Cuerpo -->
+      <rect x="35" y="75" width="30" height="45" fill="none" stroke="#000" stroke-width="3" rx="5" />
+      <!-- Alas caídas -->
+      <path d="M 35,80 Q 15,110 25,120 Q 35,110 35,95" fill="none" stroke="#000" stroke-width="3" />
+      <path d="M 65,80 Q 85,110 75,120 Q 65,110 65,95" fill="none" stroke="#000" stroke-width="3" />
+      
+      <!-- Cola atrapada en pegamento -->
+      <path d="M 50,120 Q 80,135 85,100 Q 70,95 50,120" fill="none" stroke="#000" stroke-width="3" />
+      <!-- Charco de pegamento -->
+      <ellipse cx="60" cy="118" rx="25" ry="5" fill="none" stroke="#000" stroke-width="2" />
+    </g>
+  </g>
+  
+  <!-- MUÑECOS CELEBRANDO EN EL SUELO (Al centro-abajo) -->
+  <g transform="translate(250, 380)">
+    <!-- Muñeco de Trapo Alegre (Gobernador Pirulo con corona) -->
+    <g transform="translate(30, 20)">
+      <circle cx="40" cy="40" r="25" fill="none" stroke="#000" stroke-width="3" />
+      <path d="M 28,15 L 32,23 L 40,15 L 48,23 L 52,15 L 50,28 L 30,28 Z" fill="none" stroke="#000" stroke-width="2" /> <!-- Corona -->
+      <path d="M 30,45 Q 40,55 50,45" fill="none" stroke="#000" stroke-width="2" /> <!-- Sonrisa -->
+      <circle cx="33" cy="35" r="3" fill="#000" />
+      <circle cx="47" cy="35" r="3" fill="#000" />
+      
+      <!-- Vestido / Levita de Gobernador -->
+      <path d="M 25,65 L 10,130 L 70,130 L 55,65 Z" fill="none" stroke="#000" stroke-width="3" />
+      <!-- Brazos arriba celebrando -->
+      <path d="M 20,70 Q -5,45 -10,30" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" />
+      <path d="M 60,70 Q 85,45 90,30" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" />
+    </g>
+    
+    <!-- Otro muñeco bailando (A la derecha) -->
+    <g transform="translate(180, 30)">
+      <circle cx="30" cy="30" r="20" fill="none" stroke="#000" stroke-width="3" />
+      <path d="M 22,33 Q 30,42 38,33" fill="none" stroke="#000" stroke-width="2" />
+      <circle cx="24" cy="25" r="2" fill="#000" />
+      <circle cx="36" cy="25" r="2" fill="#000" />
+      
+      <!-- Cuerpo -->
+      <rect x="15" y="50" width="30" height="50" fill="none" stroke="#000" stroke-width="3" rx="5" />
+      <!-- Brazos levantados -->
+      <path d="M 15,55 Q 0,40 -10,40" fill="none" stroke="#000" stroke-width="3" />
+      <path d="M 45,55 Q 60,40 70,40" fill="none" stroke="#000" stroke-width="3" />
+      <!-- Piernas en posición de baile -->
+      <path d="M 20,100 L 10,125" stroke="#000" stroke-width="3" stroke-linecap="round" />
+      <path d="M 40,100 L 45,120 L 55,125" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" />
+    </g>
+  </g>
+  
+  <!-- Flores y serpentinas en el suelo -->
+  <path d="M 100,500 Q 120,480 130,510" fill="none" stroke="#000" stroke-width="2" />
+  <circle cx="130" cy="510" r="5" fill="none" stroke="#000" stroke-width="2" />
+  
+  <path d="M 700,480 Q 680,490 660,470" fill="none" stroke="#000" stroke-width="2" />
+  
+  <!-- Instrucciones inferiores -->
+  <text x="400" y="555" font-family="'Nunito', sans-serif" font-size="14" text-anchor="middle" fill="#777">¡Usa tus colores para darle vida a la victoria de la Ciudad de los Muñecos!</text>
+</svg>

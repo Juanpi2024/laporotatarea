@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La Porota: Misión en la Ciudad de los Muñecos - Un juego interactivo de comprensión lectora basado en el libro de Hernán del Solar">
+    <title>La Porota: Misión en la Ciudad de los Muñecos</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- PANTALLA DE SELECCIÓN DE ALUMNO               -->
+    <!-- ============================================= -->
+    <section id="student-select-screen" class="screen active" style="justify-content: center; align-items: center; padding: 25px;">
+        <div class="stars-container" id="stars-container-select"></div>
+        <div class="hero-content" style="max-width: 1100px; width: 100%;">
+            <div class="storybook-frame" style="max-width: 100%; width: 100%; border-color: #FFD700; box-shadow: 0 0 45px rgba(255, 215, 0, 0.25); padding: 30px var(--space-xl);">
+                <div class="title-wrapper" style="text-align: center;">
+                    <span class="title-badge" style="background: linear-gradient(135deg, #FF8C00, #FFD700); color: #1e0a4f;">🎒 Control de Curso</span>
+                    <h1 class="game-title" style="margin-bottom: 15px;">
+                        <span class="title-line" style="font-size: 2.3rem !important;">¿Quién Investiga Hoy?</span>
+                        <span class="title-subtitle" style="font-size: 0.95rem; color: #FFD700; margin-top: 5px;">Selecciona tu nombre para ingresar a la Ciudad de los Muñecos</span>
+                    </h1>
+                </div>
+
+                <!-- Buscador de alumnos -->
+                <div class="search-wrapper" style="margin: 0 auto 20px auto; max-width: 500px; position: relative;">
+                    <input type="text" id="search-student-input" placeholder="🔍 Escribe tu nombre para buscarte..." style="width: 100%; padding: 10px 20px; border-radius: 30px; border: 2px solid rgba(255, 215, 0, 0.4); background: rgba(0, 0, 0, 0.4); color: #fff; font-family: var(--font-body); font-size: 1rem; outline: none; transition: all 0.3s; text-align: center; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);">
+                </div>
+
+                <!-- Grilla de Alumnos -->
+                <div class="students-grid" id="students-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 15px; margin: 15px 0; max-height: 380px; overflow-y: auto; padding: 12px; background: rgba(0,0,0,0.25); border-radius: var(--radius-md); border: 1.5px dashed rgba(255,215,0,0.2);">
+                    <!-- Se cargan dinámicamente -->
+                </div>
+
+                <div class="select-actions" style="display: flex; gap: 15px; justify-content: center; margin-top: 15px; flex-wrap: wrap;">
+                    <button id="btn-add-student-select" class="btn-adventure" style="font-size: 0.9rem !important; padding: 8px 18px !important; min-height: 40px !important; animation: none !important; background: linear-gradient(135deg, var(--color-magic-blue), var(--color-primary-light)) !important; border-color: rgba(255,255,255,0.2) !important;">
+                        <span>➕ Nuevo Alumno</span>
+                    </button>
+                    <button id="btn-open-dashboard" class="btn-adventure" style="font-size: 0.9rem !important; padding: 8px 18px !important; min-height: 40px !important; animation: none !important; background: linear-gradient(135deg, var(--color-gold), var(--color-orange)) !important; border-color: rgba(255,255,255,0.2) !important;">
+                        <span>📊 Panel Docente</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- PANTALLA DE INICIO (Hero Section)             -->
+    <!-- ============================================= -->
+    <section id="start-screen" class="screen">
+        <div class="stars-container" id="stars-container"></div>
+        
+        <div class="hero-content">
+            <div class="storybook-frame">
+                <div class="title-wrapper">
+                    <span class="title-badge">📖 Aventura Literaria</span>
+                    <h1 class="game-title">
+                        <span class="title-line">La Porota</span>
+                        <span class="title-subtitle">Misión en la Ciudad de los Muñecos</span>
+                    </h1>
+                </div>
+
+                <div class="narrative-scroll">
+                    <div class="scroll-ornament top">✦ ✦ ✦</div>
+                    <p class="narrative-text">
+                        La <strong>Ciudad de los Muñecos de Trapo</strong> está en grave peligro. 
+                        Diez temibles <em>Vampiros de Trapo</em> atacan durante la noche, 
+                        succionando el aserrín de los juguetes indefensos. 🧛
+                    </p>
+                    <p class="narrative-text">
+                        <strong>Porota</strong> y su valiente muñeca <strong>Mimí</strong> necesitan 
+                        tu ayuda. Como <span class="highlight-text">Investigador Especial</span>, 
+                        debes recolectar las pistas necesarias para conseguir el pegamento 
+                        y atrapar a los vampiros en la fábrica de Don Pedro. 🔍
+                    </p>
+                    <div class="scroll-ornament bottom">✦ ✦ ✦</div>
+                </div>
+
+                <div class="hero-actions">
+                    <button id="btn-start" class="btn-adventure" aria-label="Comenzar la aventura">
+                        <span class="btn-icon">🚀</span>
+                        <span class="btn-text">Comenzar Aventura</span>
+                        <span class="btn-sparkle"></span>
+                    </button>
+                </div>
+
+                <div class="hero-characters">
+                    <div class="character character-porota" title="Porota">
+                        <span class="character-emoji">👧</span>
+                        <span class="character-name">Porota</span>
+                    </div>
+                    <div class="character character-mimi" title="Mimí">
+                        <span class="character-emoji">🧸</span>
+                        <span class="character-name">Mimí</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- PANTALLA DE JUEGO                             -->
+    <!-- ============================================= -->
+    <section id="game-screen" class="screen">
+        
+        <!-- Barra Superior -->
+        <header id="top-bar">
+            <div class="top-bar-inner">
+                <!-- Info del jugador -->
+                <div class="player-info" style="display: flex; align-items: center; gap: 8px;">
+                    <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                        <span class="player-icon">🕵️</span>
+                        <span class="player-label">Investigador</span>
+                    </div>
+                    <button id="btn-back-to-start" class="btn-adventure" style="font-size: var(--fs-xs) !important; padding: 5px 12px !important; min-height: 32px !important; border-radius: 15px !important; animation: none !important; margin-left: 10px !important; border-width: 1px !important; background: rgba(255,255,255,0.15) !important;" aria-label="Volver al inicio del juego">
+                        <span>🏠 Inicio</span>
+                    </button>
+                    <button id="btn-toggle-sound" class="btn-adventure" style="font-size: var(--fs-xs) !important; padding: 5px 12px !important; min-height: 32px !important; border-radius: 15px !important; animation: none !important; margin-left: 6px !important; border-width: 1px !important; background: rgba(255,255,255,0.15) !important;" aria-label="Activar o desactivar música de fondo">
+                        <span id="sound-icon">🔇</span>
+                    </button>
+                </div>
+
+                <!-- Vidas -->
+                <div id="lives-display" class="lives-display" aria-label="Vidas restantes">
+                    <span class="lives-label">Vidas:</span>
+                    <div class="hearts-container" id="hearts-container">
+                        <span class="heart active" data-life="1">❤️</span>
+                        <span class="heart active" data-life="2">❤️</span>
+                        <span class="heart active" data-life="3">❤️</span>
+                    </div>
+                </div>
+
+                <!-- Puntaje -->
+                <div id="score-display" class="score-display">
+                    <span class="score-icon">⭐</span>
+                    <span class="score-label">Puntos:</span>
+                    <span class="score-value" id="score-value">0</span>
+                </div>
+
+                <!-- Insignias -->
+                <div id="badges-panel" class="badges-panel">
+                    <span class="badges-label">Insignias:</span>
+                    <div class="badges-container" id="badges-container">
+                        <div class="badge locked" id="badge-amigo-leal" data-badge="amigo-leal" title="Amigo Leal - Completa Misión 1 y 2">
+                            <span class="badge-icon">❓</span>
+                        </div>
+                        <div class="badge locked" id="badge-estratega" data-badge="estratega" title="Estratega - Completa Misión 4">
+                            <span class="badge-icon">❓</span>
+                        </div>
+                        <div class="badge locked" id="badge-muneca-honoraria" data-badge="muneca-honoraria" title="Muñeca de Trapo Honoraria - Completa todas las misiones">
+                            <span class="badge-icon">❓</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mapa de Progreso -->
+        <main id="progress-map" class="progress-map">
+            <div class="map-background">
+                <div class="map-container">
+                    
+                    <!-- Título del mapa -->
+                    <div class="map-title">
+                        <h2>🗺️ Mapa de la Aventura</h2>
+                    </div>
+
+                    <!-- Camino y Nodos -->
+                    <div class="map-path">
+                        
+                        <!-- Misión 5: La Fábrica de Don Pedro (arriba) -->
+                        <div class="mission-stop" data-mission="5">
+                            <div class="path-segment" id="path-4-5"></div>
+                            <button class="mission-node locked" id="node-5" data-mission="5" aria-label="Misión 5: El Plan Maestro" disabled>
+                                <span class="node-icon">⭐</span>
+                                <span class="node-lock">🔒</span>
+                                <span class="node-number">5</span>
+                            </button>
+                            <span class="mission-label">La Fábrica de Don Pedro</span>
+                        </div>
+
+                        <!-- Misión 4: El Taller del Carpintero -->
+                        <div class="mission-stop" data-mission="4">
+                            <div class="path-segment" id="path-3-4"></div>
+                            <button class="mission-node locked" id="node-4" data-mission="4" aria-label="Misión 4: El Aliado Secreto" disabled>
+                                <span class="node-icon">🔨</span>
+                                <span class="node-lock">🔒</span>
+                                <span class="node-number">4</span>
+                            </button>
+                            <span class="mission-label">El Taller del Carpintero</span>
+                        </div>
+
+                        <!-- Misión 3: La Casa de Mimí -->
+                        <div class="mission-stop" data-mission="3">
+                            <div class="path-segment" id="path-2-3"></div>
+                            <button class="mission-node locked" id="node-3" data-mission="3" aria-label="Misión 3: Lazos de Amistad" disabled>
+                                <span class="node-icon">💕</span>
+                                <span class="node-lock">🔒</span>
+                                <span class="node-number">3</span>
+                            </button>
+                            <span class="mission-label">La Casa de Mimí</span>
+                        </div>
+
+                        <!-- Misión 2: Las Calles de la Ciudad -->
+                        <div class="mission-stop" data-mission="2">
+                            <div class="path-segment" id="path-1-2"></div>
+                            <button class="mission-node locked" id="node-2" data-mission="2" aria-label="Misión 2: Los Enemigos de Trapo" disabled>
+                                <span class="node-icon">🧟</span>
+                                <span class="node-lock">🔒</span>
+                                <span class="node-number">2</span>
+                            </button>
+                            <span class="mission-label">Las Calles de la Ciudad</span>
+                        </div>
+
+                        <!-- Misión 1: La Habitación de Porota (abajo - inicio) -->
+                        <div class="mission-stop" data-mission="1">
+                            <button class="mission-node active" id="node-1" data-mission="1" aria-label="Misión 1: El Nombre Secreto">
+                                <span class="node-icon">🔍</span>
+                                <span class="node-lock">🔒</span>
+                                <span class="node-number">1</span>
+                            </button>
+                            <span class="mission-label">La Habitación de Porota</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Baúl de Recompensas Flotante -->
+        <div id="rewards-chest-btn" class="rewards-chest-btn locked" title="Baúl de Recompensas - ¡Juega para ganar regalos!">
+            <div class="chest-glow"></div>
+            <span class="chest-icon">🎁</span>
+            <span class="chest-badge" id="chest-badge-count">0</span>
+            <span class="chest-text">Mi Baúl</span>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- MODAL DE MISIÓN                               -->
+    <!-- ============================================= -->
+    <div id="mission-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-card" id="modal-card">
+            <button class="modal-close" id="btn-close-modal" aria-label="Cerrar misión">&times;</button>
+            
+            <div class="modal-header">
+                <span class="modal-mission-number" id="modal-mission-number">Misión 1</span>
+                <h2 class="modal-title" id="modal-title">El Nombre Secreto</h2>
+                <p class="modal-location" id="modal-location">📍 La Habitación de Porota</p>
+            </div>
+
+            <div class="modal-body">
+                <p class="modal-description" id="modal-description">
+                    Descubre la identidad secreta de nuestra heroína para comenzar la aventura.
+                </p>
+                <div class="modal-question-card">
+                    <span class="question-icon" id="question-icon">🔍</span>
+                    <p class="question-text" id="question-text">¿Cuál es el verdadero nombre de Porota?</p>
+                </div>
+
+                <div class="answers-grid" id="answers-grid">
+                    <!-- Las opciones se generan dinámicamente via JS -->
+                </div>
+
+                <div class="hint-area" id="hint-area" style="display: none;">
+                    <span class="hint-icon">💡</span>
+                    <p class="hint-text" id="hint-text">Pista...</p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="attempts-info" id="attempts-info">
+                    <span>Intentos: </span>
+                    <span id="attempts-count">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- OVERLAY DE RETROALIMENTACIÓN                  -->
+    <!-- ============================================= -->
+    <div id="feedback-overlay" class="feedback-overlay">
+        <div class="feedback-content" id="feedback-content">
+            <span class="feedback-icon" id="feedback-icon">⭐</span>
+            <p class="feedback-message" id="feedback-message">¡Correcto!</p>
+            <span class="feedback-points" id="feedback-points">+100</span>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- NOTIFICACIÓN DE INSIGNIA                      -->
+    <!-- ============================================= -->
+    <div id="badge-notification" class="badge-notification">
+        <div class="badge-notif-content">
+            <span class="badge-notif-icon" id="badge-notif-icon">🏅</span>
+            <div class="badge-notif-text">
+                <strong id="badge-notif-title">¡Nueva Insignia!</strong>
+                <p id="badge-notif-desc">Has desbloqueado una insignia</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- CONTENEDOR DE CONFETI                         -->
+    <!-- ============================================= -->
+    <div id="confetti-container" class="confetti-container"></div>
+
+    <!-- ============================================= -->
+    <!-- PANTALLA DE VICTORIA                          -->
+    <!-- ============================================= -->
+    <section id="victory-screen" class="screen">
+        <div class="victory-content">
+            <div class="victory-trophy">👑</div>
+            <h1 class="victory-title">¡Muñeca de Trapo Honoraria!</h1>
+            <p class="victory-subtitle">El Gobernador Pirulo te otorga este título especial</p>
+            
+            <div class="victory-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">⭐</span>
+                    <span class="stat-value" id="final-score">0</span>
+                    <span class="stat-label">Puntos Totales</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">❤️</span>
+                    <span class="stat-value" id="final-lives">0</span>
+                    <span class="stat-label">Vidas Restantes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🏅</span>
+                    <span class="stat-value" id="final-badges">0</span>
+                    <span class="stat-label">Insignias</span>
+                </div>
+            </div>
+
+            <div class="victory-badges" id="victory-badges">
+                <!-- Insignias ganadas se renderizan aquí -->
+            </div>
+
+            <div class="victory-message">
+                <p>🎉 ¡Felicitaciones, Investigador! Has ayudado a Porota y Mimí a salvar la Ciudad de los Muñecos de Trapo. Los vampiros han sido atrapados gracias a tu inteligencia y valentía. 🎉</p>
+            </div>
+
+            <button id="btn-play-again" class="btn-adventure btn-replay">
+                <span class="btn-icon">🔄</span>
+                <span class="btn-text">Jugar de Nuevo</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- PANTALLA DE GAME OVER                         -->
+    <!-- ============================================= -->
+    <section id="gameover-screen" class="screen">
+        <div class="gameover-content">
+            <div class="gameover-icon">💪</div>
+            <h1 class="gameover-title">¡No te rindas!</h1>
+            <p class="gameover-subtitle">Los mejores investigadores siempre lo intentan de nuevo</p>
+            
+            <div class="gameover-message">
+                <p>Los vampiros de trapo son muy astutos, pero tú eres más inteligente. 
+                Vuelve a leer las pistas del libro <strong>"La Porota"</strong> de Hernán del Solar 
+                y regresa con más fuerza. ¡Porota y Mimí te esperan! 📚</p>
+            </div>
+
+            <div class="gameover-stats">
+                <p>Alcanzaste la <strong>Misión <span id="gameover-mission">1</span></strong></p>
+                <p>Puntos obtenidos: <strong><span id="gameover-score">0</span></strong></p>
+            </div>
+
+            <button id="btn-retry" class="btn-adventure btn-retry">
+                <span class="btn-icon">🔄</span>
+                <span class="btn-text">Intentar de Nuevo</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- Floating Points Animation Container           -->
+    <!-- ============================================= -->
+    <div id="floating-points" class="floating-points-container"></div>
+
+    <!-- ============================================= -->
+    <!-- MODAL BAÚL DE RECOMPENSAS                    -->
+    <!-- ============================================= -->
+    <div id="rewards-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="rewards-modal-title">
+        <div class="modal-card rewards-card">
+            <button class="modal-close" id="btn-close-rewards" aria-label="Cerrar baúl">&times;</button>
+            <div class="modal-header">
+                <span class="modal-mission-number">🎒 Colección Especial</span>
+                <h2 id="rewards-modal-title" class="modal-title">Mi Baúl de Recompensas</h2>
+                <p class="modal-location">¡Fichas exclusivas e información secreta desbloqueada!</p>
+            </div>
+            <div class="modal-body">
+                <div class="rewards-grid">
+                    <!-- Ficha 1 -->
+                    <div class="reward-item-card locked" id="reward-card-1">
+                        <div class="reward-badge-status">🔒 Bloqueado</div>
+                        <div class="reward-icon-wrapper">🎨</div>
+                        <h3>Ficha para Colorear 1</h3>
+                        <p class="reward-card-desc">"Porota y su Muñeca Mimí" en su habitación.</p>
+                        <p class="reward-lock-condition">Se desbloquea al completar la <strong>Misión 1</strong></p>
+                        <button class="btn-adventure btn-reward-action" id="btn-view-reward-1" disabled>
+                            <span>👁️ Ver y Descargar</span>
+                        </button>
+                    </div>
+
+                    <!-- Infografía -->
+                    <div class="reward-item-card locked" id="reward-card-2">
+                        <div class="reward-badge-status">🔒 Bloqueado</div>
+                        <div class="reward-icon-wrapper">📊</div>
+                        <h3>Infografía Interactiva</h3>
+                        <p class="reward-card-desc">Guía de personajes y datos secretos del libro.</p>
+                        <p class="reward-lock-condition">Se desbloquea al completar la <strong>Misión 3</strong></p>
+                        <button class="btn-adventure btn-reward-action btn-gold" id="btn-view-reward-2" disabled>
+                            <span>🧠 Explorar Guía</span>
+                        </button>
+                    </div>
+
+                    <!-- Ficha 2 -->
+                    <div class="reward-item-card locked" id="reward-card-3">
+                        <div class="reward-badge-status">🔒 Bloqueado</div>
+                        <div class="reward-icon-wrapper">🎨</div>
+                        <h3>Ficha para Colorear 2</h3>
+                        <p class="reward-card-desc">"Celebración y Triunfo" en la fábrica.</p>
+                        <p class="reward-lock-condition">Se desbloquea al completar la <strong>Misión 5</strong></p>
+                        <button class="btn-adventure btn-reward-action" id="btn-view-reward-3" disabled>
+                            <span>👁️ Ver y Descargar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- MODAL VISOR DE FICHAS DE COLOREAR            -->
+    <!-- ============================================= -->
+    <div id="visor-modal" class="modal-overlay visor-overlay" role="dialog" aria-modal="true" aria-labelledby="visor-title">
+        <div class="modal-card visor-card">
+            <button class="modal-close" id="btn-close-visor" aria-label="Cerrar visor">&times;</button>
+            <div class="modal-header">
+                <span class="modal-mission-number">🎨 Impresora Creativa</span>
+                <h2 id="visor-title" class="modal-title">Ficha para Colorear</h2>
+            </div>
+            <div class="modal-body visor-body">
+                <div class="visor-content-frame" id="visor-content-frame">
+                    <!-- SVG cargado dinámicamente -->
+                </div>
+            </div>
+            <div class="modal-footer visor-footer">
+                <button class="btn-adventure" id="btn-print-visor">
+                    <span>🖨️ Imprimir Ficha</span>
+                </button>
+                <button class="btn-adventure btn-secondary" id="btn-download-visor">
+                    <span>📥 Descargar SVG</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- MODAL INFOGRAFÍA INTERACTIVA                  -->
+    <!-- ============================================= -->
+    <div id="infographic-modal" class="modal-overlay infographic-overlay" role="dialog" aria-modal="true" aria-labelledby="info-title">
+        <div class="modal-card infographic-card">
+            <button class="modal-close" id="btn-close-info" aria-label="Cerrar infografía">&times;</button>
+            <div class="modal-header">
+                <span class="modal-mission-number">📊 Guía de Investigación Literaria</span>
+                <h2 id="info-title" class="modal-title">Secretos de "La Porota"</h2>
+                <p class="modal-location">📍 Ciudad de los Muñecos de Trapo</p>
+            </div>
+            <div class="modal-body info-body">
+                <!-- Pestañas de navegación -->
+                <nav class="info-tabs">
+                    <button class="info-tab-btn active" data-tab="tab-autor">✍️ El Autor</button>
+                    <button class="info-tab-btn" data-tab="tab-personajes">👥 Personajes</button>
+                    <button class="info-tab-btn" data-tab="tab-datos">💡 Datos del Aserrín</button>
+                </nav>
+
+                <div class="info-tab-content active" id="tab-autor">
+                    <div class="tab-profile">
+                        <div class="profile-avatar">👨‍💻</div>
+                        <div class="profile-info">
+                            <h3>Hernán del Solar</h3>
+                            <p class="subtitle">Premio Nacional de Literatura de Chile (1968)</p>
+                            <p class="profile-desc">
+                                Nació en Santiago en 1901 y fue un brillante escritor, crítico literario y traductor. Creó la editorial de literatura infantil Rapa Nui para que los niños chilenos tuvieran hermosas historias mágicas. 
+                            </p>
+                            <p class="profile-desc">
+                                <strong>La Porota</strong> (publicada en 1946) es su obra más célebre, donde celebra el poder de la imaginación infantil y la lealtad de la amistad.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-tab-content" id="tab-personajes">
+                    <!-- Banner interactivo de la Guía de Personajes -->
+                    <div class="char-guide-banner" id="char-guide-banner" style="margin-bottom: 20px; text-align: center; background: rgba(255,255,255,0.9); padding: 15px; border-radius: 12px; border: 3px solid #FFD700; box-shadow: 0 6px 15px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" title="Hacer clic para ver a pantalla completa">
+                        <p style="font-family: 'Fredoka One', cursive; color: #2D1B69; margin-bottom: 6px; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                            <span>📖</span> Guía de Personajes Oficial
+                        </p>
+                        <img src="img/guia_personajes.png" alt="Guía de Personajes La Porota" style="max-width: 100%; border-radius: 8px; max-height: 150px; object-fit: contain; border: 1px solid rgba(0,0,0,0.1); margin: 5px 0;">
+                        <p style="font-family: 'Nunito', sans-serif; font-size: 0.75rem; color: #FF8C00; font-weight: 800; margin-top: 4px; animation: pulse 2s infinite;">🔍 ¡Haz clic en la imagen para ver a pantalla completa y explorar los detalles!</p>
+                    </div>
+
+                    <div class="characters-grid">
+                        <div class="char-info-card">
+                            <span class="char-emoji">👧</span>
+                            <h4>Porota</h4>
+                            <p>Beatriz es una niña rubia con trenzas, alegre, valiente y muy atrevida. Su imaginación y pegamento salvaron a la ciudad.</p>
+                        </div>
+                        <div class="char-info-card">
+                            <span class="char-emoji">🧸</span>
+                            <h4>Mimí</h4>
+                            <p>Muñeca de trapo, de grandes ojos de botón y boca cosida. Es la inteligente sobrina del Gobernador de la Ciudad.</p>
+                        </div>
+                        <div class="char-info-card">
+                            <span class="char-emoji">👑</span>
+                            <h4>Gobernador Pirulo</h4>
+                            <p>Tío de Mimí y máxima autoridad de la Ciudad. Es un muñeco de trapo digno, muy elegante y agradecido.</p>
+                        </div>
+                        <div class="char-info-card">
+                            <span class="char-emoji">🔨</span>
+                            <h4>El Carpintero</h4>
+                            <p>Un hábil artesano humano que confía en Porota. Le regala la cola de pegar con la que vencen a los vampiros.</p>
+                        </div>
+                        <div class="char-info-card">
+                            <span class="char-emoji">🧟</span>
+                            <h4>Vampiros de Trapo</h4>
+                            <p>Muñecos malos de colmillos de lana y colas largas. Atacan de noche para succionar el relleno de los habitantes.</p>
+                        </div>
+                        <div class="char-info-card">
+                            <span class="char-emoji">🏭</span>
+                            <h4>Don Pedro</h4>
+                            <p>Dueño de la fábrica de juguetes de madera y metal, donde se esconden los vampiros de trapo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-tab-content" id="tab-datos">
+                    <div class="secrets-flex">
+                        <div class="secret-box">
+                            <h5>🩺 ¿Qué es el Aserrín?</h5>
+                            <p>En el mundo real, el aserrín son trozos de madera que caen al cortar. Pero en la <strong>Ciudad de los Muñecos</strong>, el aserrín representa la <strong>vida, el alma y la energía</strong> de cada juguete de trapo. Si un muñeco pierde su aserrín, se desinfla por completo y pierde la capacidad de hablar y moverse.</p>
+                        </div>
+                        <div class="secret-box">
+                            <h5>🌟 La Moraleja de la Historia</h5>
+                            <p>El libro nos enseña que **el ingenio y la inteligencia** son mucho más valiosos y poderosos que la fuerza física o la violencia. Porota no usa armas ni golpes para detener a los temibles vampiros; en su lugar, utiliza su creatividad, un plan astuto y el pegamento del carpintero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p style="margin: 0; font-size: 0.95rem; color:#FFD700; font-family:'Fredoka One', cursive; text-align: center; width: 100%;">🌟 ¡El conocimiento es tu superpoder literario! 🌟</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- MODAL DE VISUALIZACIÓN DE IMÁGENES COMPLETAS -->
+    <!-- ============================================= -->
+    <div id="image-viewer-modal" class="modal-overlay viewer-overlay" role="dialog" aria-modal="true" aria-labelledby="viewer-modal-title" style="background: rgba(0,0,0,0.92); z-index: 5000;">
+        <div class="modal-card viewer-modal-card" style="max-width: 95%; width: auto; background: #1e0a4f; border: 4px solid #FFD700; max-height: 95vh; display: flex; flex-direction: column;">
+            <button class="modal-close" id="btn-close-image-viewer" style="color: white; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25);" aria-label="Cerrar visualizador">&times;</button>
+            <div class="modal-header" style="border-bottom: 2px dashed rgba(255, 215, 0, 0.3); padding-bottom: 10px; margin-bottom: 15px;">
+                <span class="modal-mission-number" style="background: linear-gradient(135deg, #FF8C00, #FFD700); color: #1e0a4f;">📖 Material Extra Oficial</span>
+                <h2 id="viewer-modal-title" class="modal-title" style="color: #FFD700; font-family: 'Fredoka One', cursive;">Guía de Personajes</h2>
+            </div>
+            <div class="modal-body" style="display: flex; justify-content: center; align-items: center; padding: 5px; overflow: hidden; flex: 1;">
+                <img id="viewer-modal-img" src="img/guia_personajes.png" alt="Guía de Personajes Completa" style="max-width: 100%; max-height: 65vh; border-radius: 8px; border: 2px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: contain;">
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid rgba(255,215,0,0.2); padding-top: 10px;">
+                <p style="margin: 0; font-size: 0.85rem; color:#fff; font-family:'Nunito', sans-serif; text-align: center; font-weight: bold;">✨ Explora las personalidades de Beatriz, Mimí y sus increíbles compañeros ✨</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- MODAL PANEL DOCENTE (DASHBOARD EDUCATIVO)     -->
+    <!-- ============================================= -->
+    <div id="dashboard-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="dashboard-title">
+        <div class="modal-card dashboard-card" style="max-width: 1000px; width: 95%; max-height: 90vh; display: flex; flex-direction: column;">
+            <button class="modal-close" id="btn-close-dashboard" aria-label="Cerrar panel docente">&times;</button>
+            
+            <div class="modal-header" style="border-bottom: 2px dashed rgba(255, 215, 0, 0.3); padding-bottom: 10px; margin-bottom: 15px;">
+                <span class="modal-mission-number" style="background: linear-gradient(135deg, var(--color-gold), var(--color-orange)); color: #1e0a4f;">📊 Panel de Control</span>
+                <h2 id="dashboard-title" class="modal-title" style="color: #FFD700; font-family: 'Fredoka One', cursive;">Dashboard Educativo "La Porota"</h2>
+                <p class="modal-location">Monitoreo de intentos, avances y logros de la Ciudad de los Muñecos</p>
+            </div>
+
+            <div class="modal-body" style="overflow-y: auto; flex: 1; padding-right: 5px;">
+                <!-- Tarjetas de Resumen Estadístico -->
+                <div class="stats-summary-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                    <div class="dashboard-stat-card" style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.1); border-radius: var(--radius-md); padding: 15px; text-align: center; border-bottom: 4px solid var(--color-magic-blue);">
+                        <span style="font-size: 2rem;">👥</span>
+                        <h4 style="font-family: 'Fredoka One', cursive; font-size: 0.9rem; color: var(--color-magic-blue-light); margin: 5px 0;">Total Investigadores</h4>
+                        <p id="db-stat-total-students" style="font-size: 2rem; font-family: 'Fredoka One', cursive; color: #fff; margin: 5px 0;">0</p>
+                    </div>
+                    <div class="dashboard-stat-card" style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.1); border-radius: var(--radius-md); padding: 15px; text-align: center; border-bottom: 4px solid var(--color-gold);">
+                        <span style="font-size: 2rem;">⭐</span>
+                        <h4 style="font-family: 'Fredoka One', cursive; font-size: 0.9rem; color: var(--color-gold); margin: 5px 0;">Promedio de Puntaje</h4>
+                        <p id="db-stat-avg-score" style="font-size: 2rem; font-family: 'Fredoka One', cursive; color: #fff; margin: 5px 0;">0</p>
+                    </div>
+                    <div class="dashboard-stat-card" style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.1); border-radius: var(--radius-md); padding: 15px; text-align: center; border-bottom: 4px solid var(--color-coral);">
+                        <span style="font-size: 2rem;">⚠️</span>
+                        <h4 style="font-family: 'Fredoka One', cursive; font-size: 0.9rem; color: var(--color-coral); margin: 5px 0;">Misión más Difícil</h4>
+                        <p id="db-stat-hardest-mission" style="font-size: 1.1rem; font-weight: 800; color: #fff; margin: 8px 0; line-height: 1.3;">Ninguna</p>
+                    </div>
+                </div>
+
+                <!-- Tabla de Progreso del Curso -->
+                <div style="background: rgba(0,0,0,0.3); border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.1); overflow-x: auto; margin-bottom: 15px;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: var(--font-body); font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: rgba(45, 27, 105, 0.8); border-bottom: 2px solid rgba(255,215,0,0.25);">
+                                <th style="padding: 12px 15px;">Investigador</th>
+                                <th style="padding: 12px 15px;">Puntaje</th>
+                                <th style="padding: 12px 15px;">Misiones Listas</th>
+                                <th style="padding: 12px 15px;">Insignias</th>
+                                <th style="padding: 12px 15px;">Intentos por Misión (Fallidos)</th>
+                                <th style="padding: 12px 15px; text-align: center;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboard-table-body">
+                            <!-- Filas de alumnos dinámicas -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="modal-footer" style="border-top: 1px solid rgba(255,215,0,0.2); padding-top: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                <button id="btn-reset-classroom" class="btn-adventure" style="font-size: 0.85rem !important; padding: 6px 15px !important; min-height: 38px !important; animation: none !important; background: linear-gradient(135deg, var(--color-coral), var(--color-coral-dark)) !important; border-color: rgba(255,255,255,0.2) !important;">
+                    <span>⚠️ Reiniciar Todo el Curso</span>
+                </button>
+                <div style="display: flex; gap: 10px;">
+                    <button id="btn-add-student-dashboard" class="btn-adventure" style="font-size: 0.85rem !important; padding: 6px 15px !important; min-height: 38px !important; animation: none !important; background: linear-gradient(135deg, var(--color-magic-blue), var(--color-primary-light)) !important;">
+                        <span>➕ Agregar Alumno</span>
+                    </button>
+                    <button id="btn-close-dashboard-bottom" class="btn-adventure btn-secondary" style="font-size: 0.85rem !important; padding: 6px 15px !important; min-height: 38px !important; animation: none !important; background: rgba(255,255,255,0.1) !important; border-color: rgba(255,255,255,0.2) !important;">
+                        <span>Cerrar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- MODAL AGREGAR NUEVO ALUMNO                    -->
+    <!-- ============================================= -->
+    <div id="add-student-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="add-student-title" style="z-index: 4000;">
+        <div class="modal-card" style="max-width: 420px; width: 90%; background: #1e0a4f; border: 3px solid var(--color-magic-blue); box-shadow: 0 0 35px rgba(74, 144, 217, 0.3);">
+            <button class="modal-close" id="btn-close-add-student" aria-label="Cerrar formulario">&times;</button>
+            
+            <div class="modal-header">
+                <span class="modal-mission-number" style="background: linear-gradient(135deg, var(--color-magic-blue), var(--color-magic-blue-light)); color: #1e0a4f;">📝 Ficha de Ingreso</span>
+                <h2 id="add-student-title" class="modal-title" style="font-size: 1.4rem; font-family: 'Fredoka One', cursive;">Registrar Investigador</h2>
+            </div>
+
+            <div class="modal-body" style="padding-top: 10px;">
+                <form id="add-student-form" style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                        <label for="student-name-input" style="font-family: 'Fredoka One', cursive; font-size: 0.9rem; color: var(--color-magic-blue-light);">Nombre del Alumno:</label>
+                        <input type="text" id="student-name-input" required placeholder="Ej. Alonso Torres" max-length="25" style="padding: 10px 14px; border-radius: var(--radius-sm); border: 2px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.25); color: #fff; font-family: var(--font-body); font-size: 1rem; outline: none; transition: border-color 0.2s;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                        <label style="font-family: 'Fredoka One', cursive; font-size: 0.9rem; color: var(--color-magic-blue-light);">Selecciona un Avatar:</label>
+                        <div class="avatar-selector" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 5px;">
+                            <!-- Opciones de avatars -->
+                            <div class="avatar-option active" data-avatar="🕵️" style="font-size: 1.8rem; cursor: pointer; text-align: center; padding: 6px; background: rgba(255,255,255,0.08); border-radius: var(--radius-sm); border: 2px solid var(--color-magic-blue); transition: all 0.2s;">🕵️</div>
+                            <div class="avatar-option" data-avatar="👧" style="font-size: 1.8rem; cursor: pointer; text-align: center; padding: 6px; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm); border: 2px solid transparent; transition: all 0.2s;">👧</div>
+                            <div class="avatar-option" data-avatar="🧸" style="font-size: 1.8rem; cursor: pointer; text-align: center; padding: 6px; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm); border: 2px solid transparent; transition: all 0.2s;">🧸</div>
+                            <div class="avatar-option" data-avatar="🐱" style="font-size: 1.8rem; cursor: pointer; text-align: center; padding: 6px; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm); border: 2px solid transparent; transition: all 0.2s;">🐱</div>
+                            <div class="avatar-option" data-avatar="🚀" style="font-size: 1.8rem; cursor: pointer; text-align: center; padding: 6px; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm); border: 2px solid transparent; transition: all 0.2s;">🚀</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-adventure" style="font-size: 1rem !important; padding: 10px !important; min-height: 44px !important; margin-top: 10px; justify-content: center; width: 100%;">
+                        <span>✨ Crear Investigador</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <!-- Firebase Configuración -->
+    <script src="js/firebase-config.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+</html>
