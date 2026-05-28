@@ -1151,7 +1151,10 @@ button {
   align-items: center;
   justify-content: center;
   z-index: 2000;
-  pointer-events: none;
+  pointer-events: auto;
+  background: rgba(10, 5, 30, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .feedback-overlay.active {
@@ -1161,10 +1164,19 @@ button {
 .feedback-content {
   text-align: center;
   animation: bounce-in 0.5s ease;
+  background: linear-gradient(135deg, rgba(45, 27, 105, 0.95), rgba(26, 15, 60, 0.98));
+  border: 3px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-2xl);
+  max-width: 650px;
+  width: 90%;
+  box-shadow: 
+    0 15px 35px rgba(0,0,0,0.6),
+    0 0 30px rgba(255, 215, 0, 0.25);
 }
 
 .feedback-icon {
-  font-size: 5rem;
+  font-size: 4.5rem;
   display: block;
   margin-bottom: var(--space-md);
   filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3));
@@ -1172,9 +1184,10 @@ button {
 
 .feedback-message {
   font-family: var(--font-heading);
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-xl);
   color: var(--text-light);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  line-height: 1.5;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .feedback-points {
@@ -1182,13 +1195,19 @@ button {
   font-size: var(--fs-3xl);
   color: var(--color-gold);
   display: block;
-  margin-top: var(--space-sm);
+  margin-top: var(--space-md);
   text-shadow: 0 2px 8px rgba(255, 215, 0, 0.5);
   animation: float 1s ease-in-out;
 }
 
-.feedback-overlay.success .feedback-message { color: var(--color-emerald); }
-.feedback-overlay.error .feedback-message { color: var(--color-coral); }
+.feedback-overlay.success .feedback-message { 
+  color: var(--color-emerald) !important;
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.2);
+}
+.feedback-overlay.error .feedback-message { 
+  color: var(--color-coral) !important;
+  text-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+}
 .feedback-overlay.error .feedback-points { display: none; }
 
 /* ============================================= */
@@ -1765,6 +1784,24 @@ button {
     padding: 1px 4px !important;
     border-radius: 6px !important;
     margin-top: 1px !important;
+  }
+
+  .feedback-content {
+    padding: var(--space-md) var(--space-lg) !important;
+  }
+
+  .feedback-icon {
+    font-size: 3rem !important;
+    margin-bottom: var(--space-xs) !important;
+  }
+
+  .feedback-message {
+    font-size: var(--fs-base) !important;
+  }
+
+  .feedback-points {
+    font-size: var(--fs-xl) !important;
+    margin-top: var(--space-xs) !important;
   }
 
   .modal-card {
