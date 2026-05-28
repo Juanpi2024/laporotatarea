@@ -156,7 +156,7 @@ button {
 /* 1. PANTALLA DE INICIO (Hero Section)          */
 /* ============================================= */
 #start-screen {
-  background: linear-gradient(rgba(30, 10, 79, 0.45), rgba(30, 10, 79, 0.45)), url('../img/bg-start.jpg') no-repeat center center / cover;
+  background: linear-gradient(rgba(30, 10, 79, 0.4), rgba(30, 10, 79, 0.5)), url('../img/mapa_porota.png') no-repeat center center / cover;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -601,113 +601,115 @@ button {
 
 .map-background {
   width: 100%;
-  max-width: 500px;
+  max-width: 950px;
   position: relative;
+  margin: 0 auto;
 }
 
 .map-container {
-  background: linear-gradient(
-    180deg,
-    rgba(30, 10, 79, 0.6) 0%,
-    rgba(45, 27, 105, 0.4) 50%,
-    rgba(74, 44, 138, 0.3) 100%
-  );
-  border: 2px solid rgba(255, 215, 0, 0.15);
+  width: 100%;
+  max-width: 950px;
+  aspect-ratio: 16 / 9;
+  background: url('../img/mapa_porota.png') no-repeat center center / cover;
+  border: 4px solid var(--color-gold);
   border-radius: var(--radius-xl);
-  padding: var(--space-xl) var(--space-lg);
-  backdrop-filter: blur(5px);
-  box-shadow: var(--shadow-lg);
   position: relative;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.25),
+    inset 0 0 100px rgba(0, 0, 0, 0.4);
+  padding: 0;
   overflow: hidden;
 }
 
-.map-container::before {
-  content: '';
+.map-title {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: linear-gradient(135deg, rgba(45, 27, 105, 0.9), rgba(30, 10, 79, 0.95));
+  border: 2px solid var(--color-gold);
+  border-radius: 30px;
+  padding: 8px 24px;
+  box-shadow: 
+    0 4px 15px rgba(0,0,0,0.5),
+    inset 0 0 10px rgba(255, 215, 0, 0.2);
+  margin-bottom: 0;
+  pointer-events: none;
+}
+
+.map-title h2 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  color: var(--color-gold);
+  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+  margin: 0;
+}
+
+/* Camino del mapa - Contenedor absoluto */
+.map-path {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(74, 144, 217, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 60%, rgba(255, 107, 157, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 50% 90%, rgba(255, 215, 0, 0.05) 0%, transparent 40%);
-  pointer-events: none;
-}
-
-.map-title {
-  text-align: center;
-  margin-bottom: var(--space-lg);
-  position: relative;
   z-index: 1;
 }
 
-.map-title h2 {
-  font-family: var(--font-heading);
-  font-size: var(--fs-xl);
-  color: var(--color-gold);
-  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
-}
-
-/* Camino del mapa */
-.map-path {
+/* Parada de misión - Posicionamiento absoluto mediante coordenadas */
+.mission-stop {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  position: relative;
-  z-index: 1;
-}
-
-.mission-stop {
-  display: flex;
   align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-md) 0;
-  position: relative;
+  gap: var(--space-xs);
+  padding: 0;
+  margin: 0;
+  z-index: 5;
+  transform: translate(-50%, -50%);
 }
 
-/* Alternar alineación para efecto de camino zigzag */
-.mission-stop:nth-child(odd) {
-  flex-direction: row;
-  padding-left: var(--space-lg);
-}
-
+.mission-stop:nth-child(odd),
 .mission-stop:nth-child(even) {
-  flex-direction: row-reverse;
-  padding-right: var(--space-lg);
+  flex-direction: column;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* Segmento del camino */
+/* Coordenadas específicas sobre la ilustración del mapa */
+.mission-stop[data-mission="1"] {
+  left: 14%;
+  top: 77%;
+}
+
+.mission-stop[data-mission="2"] {
+  left: 41%;
+  top: 66%;
+}
+
+.mission-stop[data-mission="3"] {
+  left: 19%;
+  top: 24%;
+}
+
+.mission-stop[data-mission="4"] {
+  left: 63.5%;
+  top: 66%;
+}
+
+.mission-stop[data-mission="5"] {
+  left: 85%;
+  top: 56%;
+}
+
+/* Segmento del camino - Desactivado porque el camino ilustrado es hermoso */
 .path-segment {
-  position: absolute;
-  width: 3px;
-  height: 40px;
-  top: -24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 215, 0, 0.2) 0px,
-    rgba(255, 215, 0, 0.2) 6px,
-    transparent 6px,
-    transparent 12px
-  );
-  z-index: 0;
-}
-
-.mission-stop:first-child .path-segment {
-  display: none;
+  display: none !important;
 }
 
 .path-segment.completed {
-  background: repeating-linear-gradient(
-    to bottom,
-    var(--color-gold) 0px,
-    var(--color-gold) 6px,
-    transparent 6px,
-    transparent 12px
-  );
-  animation: path-fill 0.5s ease;
+  display: none !important;
 }
 
 /* Nodo de misión */
@@ -723,6 +725,7 @@ button {
   transition: all var(--transition-base);
   font-size: var(--fs-2xl);
   z-index: 2;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .mission-node .node-icon {
@@ -766,15 +769,15 @@ button {
 
 /* Estado: bloqueado */
 .mission-node.locked {
-  background: rgba(255, 255, 255, 0.05);
-  border: 3px solid rgba(255, 255, 255, 0.1);
+  background: rgba(30, 10, 79, 0.65);
+  border: 3px solid rgba(255, 255, 255, 0.25);
   filter: grayscale(0.7);
-  opacity: 0.5;
+  opacity: 0.75;
   cursor: not-allowed;
 }
 
 .mission-node.locked .node-icon {
-  opacity: 0.4;
+  opacity: 0.45;
 }
 
 /* Estado: activo */
@@ -782,8 +785,8 @@ button {
   background: linear-gradient(135deg, var(--color-magic-blue), var(--color-primary-light));
   border: 3px solid var(--color-gold);
   box-shadow:
-    0 0 20px rgba(74, 144, 217, 0.4),
-    0 0 40px rgba(255, 215, 0, 0.2);
+    0 0 20px rgba(74, 144, 217, 0.5),
+    0 0 40px rgba(255, 215, 0, 0.3);
   animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
   cursor: pointer;
   filter: none;
@@ -797,15 +800,15 @@ button {
 .mission-node.active:hover {
   transform: scale(1.15);
   box-shadow:
-    0 0 30px rgba(74, 144, 217, 0.6),
-    0 0 60px rgba(255, 215, 0, 0.3);
+    0 0 30px rgba(74, 144, 217, 0.7),
+    0 0 60px rgba(255, 215, 0, 0.4);
 }
 
 /* Estado: completado */
 .mission-node.completed {
   background: linear-gradient(135deg, var(--color-emerald), var(--color-emerald-dark));
   border: 3px solid var(--color-gold);
-  box-shadow: var(--shadow-glow-green);
+  box-shadow: var(--shadow-glow-green), 0 4px 15px rgba(0,0,0,0.4);
   cursor: default;
   filter: none;
   opacity: 1;
@@ -834,21 +837,34 @@ button {
   border: 2px solid var(--text-dark);
 }
 
-/* Label de misión */
+/* Label de misión de alta legibilidad */
 .mission-label {
   font-family: var(--font-heading);
-  font-size: var(--fs-sm);
-  color: var(--text-light-muted);
+  font-size: var(--fs-xs);
+  color: #fff !important;
+  background: rgba(26, 15, 60, 0.85);
+  border: 1.5px solid rgba(255, 215, 0, 0.35);
+  border-radius: 12px;
+  padding: 3px 10px;
   white-space: nowrap;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all var(--transition-base);
+  margin-top: 4px;
 }
 
 .mission-stop:has(.mission-node.active) .mission-label {
-  color: var(--color-gold);
+  color: var(--color-gold) !important;
+  background: rgba(45, 27, 105, 0.95);
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  transform: scale(1.05);
 }
 
 .mission-stop:has(.mission-node.completed) .mission-label {
-  color: var(--color-emerald);
+  color: var(--color-emerald) !important;
+  border-color: var(--color-emerald);
+  background: rgba(20, 40, 30, 0.9);
 }
 
 /* ============================================= */
@@ -1711,15 +1727,44 @@ button {
   }
 
   .map-container {
-    padding: var(--space-md);
+    padding: 0;
   }
 
-  .mission-stop:nth-child(odd) {
-    padding-left: var(--space-sm);
+  .mission-node {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1rem !important;
   }
 
-  .mission-stop:nth-child(even) {
-    padding-right: var(--space-sm);
+  .mission-node .node-number {
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 8px !important;
+    top: -5px !important;
+    left: -5px !important;
+  }
+
+  .mission-node .node-lock {
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 8px !important;
+    bottom: -3px !important;
+    right: -3px !important;
+  }
+
+  .mission-node.completed::after {
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 8px !important;
+    bottom: -3px !important;
+    right: -3px !important;
+  }
+
+  .mission-label {
+    font-size: 8px !important;
+    padding: 1px 4px !important;
+    border-radius: 6px !important;
+    margin-top: 1px !important;
   }
 
   .modal-card {
@@ -1754,7 +1799,7 @@ button {
   }
 
   .map-background {
-    max-width: 560px;
+    max-width: 950px;
   }
 
   .badge {
@@ -1768,7 +1813,7 @@ button {
   }
 
   .map-path {
-    padding: 0 var(--space-lg);
+    padding: 0;
   }
 }
 
