@@ -1296,7 +1296,7 @@ button {
 /* 9. PANTALLA DE VICTORIA                       */
 /* ============================================= */
 #victory-screen {
-  background: linear-gradient(rgba(30, 10, 79, 0.55), rgba(30, 10, 79, 0.55)), url('../img/bg-victory.jpg') no-repeat center center / cover;
+  background: linear-gradient(rgba(30, 10, 79, 0.4), rgba(30, 10, 79, 0.55)), url('../img/mapa_porota.png') no-repeat center center / cover;
   justify-content: center;
   align-items: center;
   text-align: center;
